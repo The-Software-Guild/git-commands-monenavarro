@@ -33,5 +33,8 @@ public class Windowmaster {
         
         height = Float.parseFloat(stringHeight);
         width = Float.parseFloat(stringWidth);
+        
+        areaOfWindow = height * width;
+        perimeterOfWindow = 2 * (height + width); 
     }
 }
