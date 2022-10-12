@@ -5,6 +5,8 @@
 
 package com.mycompany.windowmaster;
 
+import java.util.Scanner;
+
 /**
  *
  * @author JulianAcosta
@@ -28,5 +30,8 @@ public class Windowmaster {
         stringHeight = myScanner.nextLine();
         System.out.println("Enter window width:");
         stringWidth = myScanner.nextLine();
+        
+        height = Float.parseFloat(stringHeight);
+        width = Float.parseFloat(stringWidth);
     }
 }
