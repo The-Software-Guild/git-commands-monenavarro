@@ -21,5 +21,12 @@ public class Windowmaster {
         float areaOfWindow;
         float cost;
         float perimeterOfWindow;
+        
+        Scanner myScanner = new Scanner(System.in);
+        
+        System.out.println("Enter window height:");
+        stringHeight = myScanner.nextLine();
+        System.out.println("Enter window width:");
+        stringWidth = myScanner.nextLine();
     }
 }
