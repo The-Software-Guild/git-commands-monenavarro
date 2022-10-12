@@ -38,5 +38,11 @@ public class Windowmaster {
         perimeterOfWindow = 2 * (height + width);
         
         cost = ((3.50f * areaOfWindow) + (2.25f * perimeterOfWindow));
+        
+        System.out.println("Window height = " + stringHeight);
+        System.out.println("Window width = " + stringWidth);
+        System.out.println("Window area = " + areaOfWindow);
+        System.out.println("Window perimeter = " + perimeterOfWindow);
+        System.out.println("Total Cost = " + cost);
     }
 }
