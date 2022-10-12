@@ -28,22 +28,22 @@ public class AllTheMaths {
         System.out.println("\n****** Now make the computer do some harder math!");
         
         System.out.print("8043.52 minus 4.2 plus 23.0 divided by 56.0 times -76.13 is: ");
-        System.out.println("-10,960.4361");
+        System.out.println("8008.05232142857");
         
         System.out.print("11111 modulus 3 minus 67 minus 1 plus 9 is: ");
-        System.out.println("274.33");
+        System.out.println("-57");
 
         System.out.print("44 minus 22 plus 11 minus 66 minus 88 plus 76 minus 11 minus 33 is : ");
         System.out.println("-89");
 
         System.out.print("22 times 3 minus 1 plus 4 times 6 minus -9 is : ");
-        System.out.println("80");
+        System.out.println("98");
 
         System.out.print("Is 67 greater than 4 * 5? ");
-        System.out.println(">");
+        System.out.println("true");
 
         System.out.print("Is 78 less than 4 * 5? ");
-        System.out.print(">");
+        System.out.print("false");
         
     }
     
