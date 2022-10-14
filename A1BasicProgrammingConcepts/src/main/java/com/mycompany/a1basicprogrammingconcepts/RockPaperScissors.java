@@ -43,7 +43,7 @@ class RockPaperScissors {
             String playerMove = scanner.nextLine();
 
             if (playerMove.equals("quit")) {
-                System.out.println("You won " + wins + " times and lost " + losses + " times." + "You drew " + ties + " times.");
+                System.out.println("You won " + wins + " times and lost " + losses + " times." + " You drew " + ties + " times.");
                 System.out.println("Thanks for playing! See you again.");
                 break;
             }
