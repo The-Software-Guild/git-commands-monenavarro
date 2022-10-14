@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.a1basicprogrammingconcepts;
+
+/**
+ *
+ * @author JulianAcosta
+ */
+public class SummativeSums {
+    /** static method that takes an array of integers
+     * adds integers together
+     * then returns results
+     */
+    
+    public static void main(String[] args) {
+        
+        int [][] arrayOfIntegers = { 
+            {1, 90, -33, -55, 67, -16, 28, -55, 15 },
+            { 999, -60, -77, 14, 160, 301 },
+            { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 
+            140, 150, 160, 170, 180, 190, 200, -99 } 
+        };
+
+        int sum1 = addIntegers(arrayOfIntegers[0]);
+            System.out.println("#1 Array Sum: " + sum1);
+            
+        int sum2 = addIntegers(arrayOfIntegers[1]);
+            System.out.println("#2 Array Sum: " + sum2);
+            
+        int sum3 = addIntegers(arrayOfIntegers[2]);
+            System.out.println("#3 Array Sum: " + sum3);
+        
+    }
+
+    public static int addIntegers (int[] list) {
+        int sum = 0;
+        for (int x : list) {
+            sum = sum + x;
+        }
+        return sum;       
+    }
+}
