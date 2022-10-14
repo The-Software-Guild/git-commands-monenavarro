@@ -12,6 +12,16 @@ package com.mycompany.a1basicprogrammingconcepts;
 import java.util.*;
 
 class RockPaperScissors {
+    
+    /** 
+     * player vs Computer
+     * user input "rock, paper, scissors"
+     * generate random computer move
+     * after each round - print return message to declare a win, loss or tie
+     * game will loop after each result, until user enters quit
+     * when user enters "quit" - display how many wins, losses and ties in that run of the program
+     * "quit" will break the game loop
+     */
 
     enum Move {
         ROCK("rock"),
