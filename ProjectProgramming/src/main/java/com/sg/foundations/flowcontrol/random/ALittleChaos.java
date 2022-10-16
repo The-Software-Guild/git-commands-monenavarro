@@ -27,12 +27,12 @@ public class ALittleChaos {
         System.out.println("Or just keep generating new values");
         System.out.println("Here's a bunch of numbers from 0 - 100: ");
 
-        System.out.print(randomiser.nextInt(101) + ", ");
-        System.out.print(randomiser.nextInt(101) + ", ");
-        System.out.print(randomiser.nextInt(101) + ", ");
-        System.out.print(randomiser.nextInt(101) + ", ");
-        System.out.print(randomiser.nextInt(101) + ", ");
-        System.out.println(randomiser.nextInt(101));
+        System.out.print(randomiser.nextInt(51) + 50);
+        System.out.print(randomiser.nextInt(51) + 50);
+        System.out.print(randomiser.nextInt(51) + 50);
+        System.out.print(randomiser.nextInt(51) + 50);
+        System.out.print(randomiser.nextInt(51) + 50);
+        System.out.println(randomiser.nextInt(51));
     }
     
 }
