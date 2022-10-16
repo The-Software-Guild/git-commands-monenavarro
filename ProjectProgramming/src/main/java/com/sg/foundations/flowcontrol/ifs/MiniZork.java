@@ -18,7 +18,7 @@ public class MiniZork {
         System.out.println("You are standing in an open field west of a white house,");
         System.out.println("With a boarded front door.");
         System.out.println("There is a small mailbox here.");
-        System.out.print("Go to the house, or open the mailbox? ");
+        System.out.print("Go to the house or open the mailbox? ");
 
         String action = userInput.nextLine();
 
@@ -39,10 +39,25 @@ public class MiniZork {
                     System.out.println("You've been eaten by a grue.");
                 } else if (action.equals("run away")) {
                     System.out.println("You run away screaming across the fields - looking very foolish.");
-                    System.out.println("But you alive. Possibly a wise choice.");
+                    System.out.println("But you are alive. Possibly a wise choice.");
                 }
-            } else if (action.equals("stick your hand in")) { }
-        } else if (action.equals("go to the house")) { }
+            } else if (action.equals("stick your hand in")) {
+                System.out.println("YOU'RE DEAD. GAME OVER.");
+            }
+            
+        } if (action.equals("go to the house")) {
+            System.out.println("You hear someone laughing.");
+            System.out.println("It sounded like it came from upstairs...");
+            System.out.print("Go upstairs or flee?");
+            action = userInput.nextLine();
+            
+            if (action.equals("go upstairs")) {
+                System.out.println("You're upstairs.");
+                System.out.println("The laughing has stopped.");
+                System.out.println("A black door opens at the end of the hall and sucks you in!!");
+                action = userInput.nextLine();
+            }
+        }
     }
 }
     
