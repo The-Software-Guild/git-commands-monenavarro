@@ -6,7 +6,7 @@ package com.sg.foundations.basics;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class ProjectGutenberg {
     public static void main(String[] args) {

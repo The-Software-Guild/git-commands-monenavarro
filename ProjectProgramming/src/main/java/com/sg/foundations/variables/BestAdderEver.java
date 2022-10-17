@@ -6,7 +6,7 @@ package com.sg.foundations.variables;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class BestAdderEver {
     public static void main(String[] args) {

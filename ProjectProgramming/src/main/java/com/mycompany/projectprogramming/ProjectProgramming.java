@@ -7,7 +7,7 @@ package com.mycompany.projectprogramming;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class ProjectProgramming {
 

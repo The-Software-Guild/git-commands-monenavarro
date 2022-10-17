@@ -6,7 +6,7 @@ package com.sg.foundations.flowcontrol.fors;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class ForAndTwentyBlackBirds {
     

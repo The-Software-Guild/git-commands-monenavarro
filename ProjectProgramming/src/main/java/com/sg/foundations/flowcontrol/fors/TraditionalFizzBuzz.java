@@ -6,7 +6,7 @@ package com.sg.foundations.flowcontrol.fors;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 import java.util.Scanner;
 

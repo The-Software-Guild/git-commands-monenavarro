@@ -6,7 +6,7 @@ package com.sg.foundations.flowcontrol.whiles;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class WaitAWhile {
     

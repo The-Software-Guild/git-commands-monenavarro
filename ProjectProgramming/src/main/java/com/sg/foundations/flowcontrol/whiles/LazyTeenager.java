@@ -6,7 +6,7 @@ package com.sg.foundations.flowcontrol.whiles;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 import java.util.Random;
 

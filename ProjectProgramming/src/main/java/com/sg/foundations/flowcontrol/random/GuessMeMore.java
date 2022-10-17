@@ -6,7 +6,7 @@ package com.sg.foundations.flowcontrol.random;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 import java.util.Scanner;
 import java.util.Random;

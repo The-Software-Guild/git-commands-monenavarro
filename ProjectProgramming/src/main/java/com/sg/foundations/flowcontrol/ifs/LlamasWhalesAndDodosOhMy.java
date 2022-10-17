@@ -6,7 +6,7 @@ package com.sg.foundations.flowcontrol.ifs;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class LlamasWhalesAndDodosOhMy {
     public static void main(String[] args) {
