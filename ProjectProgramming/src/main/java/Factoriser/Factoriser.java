@@ -6,7 +6,7 @@ package Factoriser;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 
 import java.util.*;
@@ -17,6 +17,8 @@ public class Factoriser {
         
         // ask for user to input an number
         int n, i;
+        int count = 0;
+        int sum = 0;
         System.out.println("What number do you want to factor?");
         Scanner factoriser = new Scanner(System.in);
         n = factoriser.nextInt(); 
@@ -28,9 +30,10 @@ public class Factoriser {
         for (i = 1; i <= n; ++i) {
             if (n % i == 0) {
                 System.out.print(i + " ");
-              
+                count++;
+                sum+= i;
             }
-            
+            System.out.println("");
             
         }
     }
