@@ -6,7 +6,7 @@ package ClassModelling;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class Car {
     
