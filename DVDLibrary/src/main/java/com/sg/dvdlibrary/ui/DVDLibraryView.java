@@ -6,7 +6,7 @@ package com.sg.dvdlibrary.ui;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class DVDLibraryView {
     

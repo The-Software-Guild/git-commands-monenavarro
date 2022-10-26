@@ -6,7 +6,7 @@ package com.sg.dvdlibrary.dto;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class DVD {
     
