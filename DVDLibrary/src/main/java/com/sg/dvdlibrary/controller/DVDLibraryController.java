@@ -11,23 +11,19 @@ package com.sg.dvdlibrary.controller;
 
 import com.sg.dvdlibrary.ui.UserIO;
 import com.sg.dvdlibrary.ui.UserIOConsoleImpl;
+import com.sg.dvdlibrary.ui.DVDLibraryView;
 
 public class DVDLibraryController {
     
+    private DVDLibraryView view = new DVDLibraryView();
     private UserIO io = new UserIOConsoleImpl();
     
     public void run() {
         boolean keepGoing = true;
         int menuSelection = 0;
         while (keepGoing) {
-            io.print("Main Menu");
-            io.print("1. List DVD Titles");
-            io.print("2. Add New DVD");
-            io.print("3. View a DVD");
-            io.print("4. Delete a DVD Entry");
-            io.print("5. Quit");
             
-            menuSelection = io.readInt("Please select from the" + " options above.", 1, 5);
+            menuSelection = getMenuSelection();
             
             switch (menuSelection) {
                 case 1:
@@ -51,5 +47,9 @@ public class DVDLibraryController {
             }
         }
         io.print("C YA LATER ALLIGATOR");
+    }
+    
+    private int getMenuSelection() {
+        return view.printMenuAndGetSelection();
     }
 }
