@@ -8,6 +8,15 @@ package com.sg.dvdlibrary.dao;
  *
  * @author MonicaNavarro
  */
+import java.util.List;
+import com.sg.dvdlibrary.dto.DVD;
+import com.sg.dvdlibrary.dto.DVDLibraryException;
+
 public interface dvdLibraryDao {
     
+    DVD addDVD(String DVD, DVD dvd) throws DVDLibraryException;
+    
+    List<DVD> getAllDVDs() throws DVDLibraryException;
+    
+    DVD getDVD(String dvdTitle) throws DVDLibraryException;
 }
