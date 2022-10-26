@@ -8,6 +8,7 @@ package com.sg.dvdlibrary.dto;
  *
  * @author MonicaNavarro
  */
+import java.util.Objects;
 
 public class DVD {
     private String title;
@@ -30,12 +31,16 @@ public class DVD {
         this.userComment = userComment;
     }
     
-    public String getTitle() {
-        return title;
+    public DVD(String title) {
+        this.title = title;
     }
-
+    
     public void setTitle(String title) {
         this.title = title;
+    }
+    
+    public String getTitle() {
+        return title;
     }
 
     public String getReleaseDate() {
@@ -78,6 +83,48 @@ public class DVD {
         this.userComment = userComment;
     }
     
-    
-    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.title);
+        hash = 29 * hash + Objects.hashCode(this.releaseDate);
+        hash = 29 * hash + Objects.hashCode(this.mpaaRating);
+        hash = 29 * hash + Objects.hashCode(this.director);
+        hash = 29 * hash + Objects.hashCode(this.studio);
+        hash = 29 * hash + Objects.hashCode(this.userComment);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final DVD other = (DVD) obj;
+        if (!Objects.equals(this.title, other.title)) {
+            return false;
+        }
+        if (!Objects.equals(this.releaseDate, other.releaseDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.mpaaRating, other.mpaaRating)) {
+            return false;
+        }
+        if (!Objects.equals(this.director, other.director)) {
+            return false;
+        }
+        if (!Objects.equals(this.studio, other.studio)) {
+            return false;
+        }
+        if (!Objects.equals(this.userComment, other.userComment)) {
+            return false;
+        }
+        return true;
+    }
 }

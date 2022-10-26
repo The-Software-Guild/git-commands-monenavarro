@@ -9,47 +9,164 @@ package com.sg.dvdlibrary.controller;
  * @author MonicaNavarro
  */
 
+import com.sg.dvdlibrary.dao.dvdLibraryDao;
+import com.sg.dvdlibrary.dao.DVDLibraryDaoFileImpl;
+import com.sg.dvdlibrary.dto.DVD;
+import com.sg.dvdlibrary.dto.DVDLibraryException;
+import com.sg.dvdlibrary.ui.DVDLibraryView;
 import com.sg.dvdlibrary.ui.UserIO;
 import com.sg.dvdlibrary.ui.UserIOConsoleImpl;
-import com.sg.dvdlibrary.ui.DVDLibraryView;
+import java.util.List;
+
+
 
 public class DVDLibraryController {
-    
-    private DVDLibraryView view = new DVDLibraryView();
-    private UserIO io = new UserIOConsoleImpl();
-    
+    DVDLibraryView view;
+    dvdLibraryDao dao;
+//    private UserIO io = new UserIOConsoleImpl();
+
+    public DVDLibraryController(DVDLibraryView view, dvdLibraryDao dao) {
+        this.view = view;
+        this.dao = dao;
+    }
+
     public void run() {
         boolean keepGoing = true;
         int menuSelection = 0;
-        while (keepGoing) {
-            
-            menuSelection = getMenuSelection();
-            
-            switch (menuSelection) {
-                case 1:
-                    io.print("LIST DVDs");
-                    break;
-                case 2:
-                    io.print("ADD A NEW DVD");
-                    break;
-                case 3:
-                    io.print("VIEW A DVD");
-                    break;
-                case 4:
-                    io.print("DELETE A DVD");
-                    break;
-                case 5:
-                    keepGoing = false;
-                    break;
-                default:
-                    io.print("ERROR! UNKNOWN COMMAND. PLEASE TRY AGAIN.");
-                  
+        try {
+            while (keepGoing) {
+
+                menuSelection = getMenuSelection();
+
+                switch (menuSelection) {
+                    case 1:
+                        addDVD();
+                        break;
+                    case 2:
+                        removeDVD();
+                        break;
+                    case 3:
+                        editDVD();
+                        break;
+                    case 4:
+                        listDVDs();
+                        break;
+                    case 5:
+                        viewDVD();
+                        break;
+                    case 6:
+                        keepGoing = false;
+                        break;
+                    default:
+                        unknownCommand();
+                }
+
             }
+            exitMessage();
+        } catch (DVDLibraryException e) {
+            view.displayErrorMessage(e.getMessage());
         }
-        io.print("C YA LATER ALLIGATOR");
     }
-    
+
     private int getMenuSelection() {
         return view.printMenuAndGetSelection();
     }
+
+    private void addDVD() throws DVDLibraryException {
+        view.displayAddDVDBanner();
+        dao.getAllDVDs();
+        DVD newDVD = view.getNewDVDInfo();
+        dao.addDVD(newDVD.getTitle(), newDVD);
+        view.displayAddSuccessBanner();
+    }
+
+    private void removeDVD() throws DVDLibraryException {
+        view.displayRemoveDVDBanner();
+        String DVDtitle = view.getDVDTitleChoice();
+        dao.removeDVD(DVDtitle);
+        view.displayRemoveSuccessBanner();
+    }
+
+    private void editDVD() throws DVDLibraryException {
+        view.displayEditDVDBanner();
+        //Get Record
+        String DVDtitle = view.getDVDTitleChoice();
+        //Return DVD object
+        DVD dvd = dao.getDVD(DVDtitle);
+        DVD dvdEdit = new DVD(dvd.getTitle(), dvd.getReleaseDate(), dvd.getmpaaRating(), dvd.getDirector(), dvd.getStudio(), dvd.getuserComment());
+        //edit logic
+        boolean keepGoing = true;
+        int editFieldChoice = 0;
+        try {
+            while (keepGoing) {
+                //Display edit menu;
+                //store menu selection
+                editFieldChoice = view.displayEditMenuDVD(dvdEdit);
+
+                switch (editFieldChoice) {
+                    case 1:
+                        dvdEdit.setTitle(view.editDVD(editFieldChoice));
+                        break;
+                    case 2:
+                        dvdEdit.setReleaseDate(view.editDVD(editFieldChoice));
+
+                        break;
+                    case 3:
+                        dvdEdit.setmpaaRating(view.editDVD(editFieldChoice));
+                        break;
+                    case 4:
+                        dvdEdit.setDirector(view.editDVD(editFieldChoice));
+                        break;
+                    case 5:
+                        dvdEdit.setStudio(view.editDVD(editFieldChoice));
+                        break;
+                    case 6:
+                        dvdEdit.setuserComment(view.editDVD(editFieldChoice));
+                        break;
+                    case 7:
+                        replaceDVD(dvd, dvdEdit);
+                        view.displayChangesSaved();
+                        break;
+                    case 8:
+                        keepGoing = false;
+                        break;
+                    default:
+                        unknownCommand();
+                }
+            }
+            view.displayReturningToMainMenu();
+        } catch (DVDLibraryException e) {
+            view.displayErrorMessage(e.getMessage());
+        }
+
+    }
+
+    private void listDVDs() throws DVDLibraryException {
+        view.displayDisplayAllBanner();
+        List<DVD> dvdList = dao.getAllDVDs();
+        view.displayDVDList(dvdList);
+    }
+
+    private void viewDVD() throws DVDLibraryException {
+        view.displayDVDBanner();
+        String DVDtitle = view.getDVDTitleChoice();
+        DVD dvd = dao.getDVD(DVDtitle);
+        view.displayDVD(dvd);
+    }
+
+    private void replaceDVD(DVD oldDVD, DVD newDVD) throws DVDLibraryException {
+        //remove old record
+        dao.removeDVD(oldDVD.getTitle());
+        //add new record
+        dao.addDVD(newDVD.getTitle(), newDVD);
+    }
+
+    private void unknownCommand() {
+        view.displayUnknownCommandBanner();
+    }
+
+    private void exitMessage() {
+        view.displayExitBanner();
+    }
+
 }
