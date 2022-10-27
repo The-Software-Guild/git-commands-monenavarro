@@ -6,7 +6,7 @@ package StateCapitals;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 import java.util.HashMap;
 import java.util.Map;

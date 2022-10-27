@@ -6,7 +6,7 @@ package StateCapitals;
 
 /**
  *
- * @author JulianAcosta
+ * @author MonicaNavarro
  */
 public class Capital {
     String name;
