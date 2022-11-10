@@ -1,0 +1,18 @@
+package com.monica.collections;
+
+import lombok.*;
+
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode  //whenever we want to store unique object
+
+public class Numbers {
+
+	private int empId;
+	private String empName;
+	private String designation;
+	private String department;
+	private double salary;
+}

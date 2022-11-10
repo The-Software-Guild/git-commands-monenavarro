@@ -1,0 +1,8 @@
+package com.monica.exercises.exception;
+
+public class MarksException extends Exception {
+	
+	public MarksException(String message) {
+		super(message);
+	}
+}

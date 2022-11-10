@@ -1,0 +1,40 @@
+package com.monica.exercises;
+
+import com.monica.exercises.exception.*;
+
+public class StudentList {
+	
+	private Student[] studentList;
+	public int totalStudents;
+	
+	public StudentList(int totalStudents) {
+		super();
+		
+		this.totalStudents = totalStudents;
+		studentList = new Student[totalStudents];
+	}
+	
+	public void inputStudent(Student student, int index) throws IDException {
+		if (studentList[0] == null) {
+			studentList[0] = student;
+		}
+		else {
+		for (int i = 0; i < totalStudents; i++) {
+			if (studentList[i].getId() == student.getId());
+				throw new IDException("Duplicate Student ID entered!");
+		}
+		
+		}
+		
+		studentList[index] = student;
+	}
+	
+	public void displayStudents() {
+		
+		for (Student student : studentList) {
+			
+			studentList.display();
+		}
+	}
+
+}
